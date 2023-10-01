@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+import java.io.*;
+import java.util.*;
+class Week5a
+{
+public static void main (String [] args) throws IOException
+{
+BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter a file name");
+String s=new String(br.readLine());
+File f=new File(s);
+if(f.exists())
+System.out.println("File exists");
+if(f.canRead())
+System.out.println("File isreadable");
+if(f.canWrite())
+System.out.println("File iswritable");
+if(f.isFile())
+System.out.println("File iswritable");
+else if(f.isDirectory())
+System.out.println("It isdirectory");
+System.out.println("The length of the file is "+length()+" bytes");
+System.out.println("path:"+f.getAbsolutePath());
+long l=f.lastModified();
+Date d=new Date(l);
+int date=d.getDate();
+int month=d.getMonth();
+int year=d.getYear();
+int hh=d.getHours();
+int mm=d.getMinutes();
+int ss=d.getSeconds();
+System.out.println(date+"/"+(month+1)+"/"+(1900+year));
+System.out.println(hh+":"+mm+":"+ss);
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+D:\education\java\programs>javacWeek5a.java
+
+D:\education\java\programs>java Week5a
+
+Enter file name D:\education\java\programs\hello.java
+File exists
+File is readable
+File is writable
+It is a file
+The length of the file is 173 bytes
+</h4>
+</pre>
+</body>
+
+</html>

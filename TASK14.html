@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+SQL> Lock table employees in share mode nowait;
+
+SQL> Lock table employees in share mode wait 5;
+
+SQL> Lock table employee in exclusive mode nowait;
+
+SQL> Lock table employees in exclusive mode wait 5;
+
+SQL> SELECT * from employees where first_name='Hermann' for update of salary;
+</h4>
+</pre>
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+import java.applet.*;
+import java.awt.event.*;
+import java.awt.*;
+/*<applet code="task13.class" height=310 width=400></applet>*/
+public class task13 extends Japplet
+{
+public void init()
+{
+Container contentpane=getContentPane();
+Contentpane.setLayout(new BorderLayout());
+final String[] colheads={“Name”,”Phone”,”Fax”};
+final object[][]data={{“vijay”,”1234”,”1234”},{“Vinod”,”3456”,”3456”},
+{“siva”,”1256”,”1256”}};
+Jtable table=new Jtable(data,colheads);
+int v=ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+int h=ScrollPaneConstants.HORIZANTAL_SCROLLBAR_AS_NEEDED;
+JScrollPane jsp=new JScrollpane(table,v,h);
+contentPane.add(jsp,BorderLayout.CENTER);
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+D:\>javac task13.java
+
+java D:\>appletviewer task13.java
+
+</h4>
+</pre>
+</body>
+
+</html>

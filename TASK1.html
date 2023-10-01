@@ -1,0 +1,126 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 900px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. Create a table EMP with the following structure.
+
+Name Type
+EMPNO NUMBER(6)
+ENAME VARCHAR2(20)
+JOB VARCHAR2(10)
+MGR NUMBER(4)
+DEPTNO NUMBER(3)
+SAL NUMBER(7,2)
+
+Query:
+
+SQL>create table emp(empno number(6), ename varchar2(20), jobvarchar2(10), mgr number(4),
+deptno number(3), sal number(7,2));
+Table created.
+
+
+
+
+B. Add a column commission to the EMP table. Commission should be numeric with null values
+allowed.
+
+Query:
+
+SQL>Alter table emp add(commission number(4));
+Output:
+Table altered.
+
+
+
+
+C. Modify the column width of the job field of emp table.
+
+Query:
+
+SQL>Alter table emp modify(job varchar2(15));
+OUTPUT:
+Table altered.
+
+
+
+
+d. Create dept table with the following structure.
+Name Type
+DEPTNO NUMBER(2)
+DNAME VARCHAR2(10)
+LOC VARCHAR2(10)
+
+Query:
+
+SQL>create table dept(deptno number(2), dname varchar2(10), loc varchar2(10));
+
+Output:
+
+Table created.
+
+
+
+
+
+e. Add constraint to the emp table that is empno as primary key and deptno as foreign key.
+
+Query:
+
+SQL>alter table emp add constraint emp_id_pk primary key(empno);
+SQL>alter table dept add constraint pk primary key(deptno);
+
+Output:
+
+Table altered
+SQL>Alter table emp add constraint emp_deptno_fk foreign key(deptno) references
+dept(deptno);
+
+
+
+
+f. Add constraints to the emp table to check the empno value while entering i.eempno>100.
+
+Query:
+
+SQL>alter table emp add check (empno>100);
+
+
+
+
+g. Salary value by default is 5000, otherwise it should accept the values from the user.
+
+Query:
+
+SQL>alter table emp modify sal default 5000;
+
+
+
+
+h. Add column DOB to the emp table Add and drop a column DOJ to the emp table.
+
+Query:
+
+SQL>alter table emp add(dob date);
+SQL>alter table emp add(doj date);
+SQL>alter table emp drop(doj);
+</h4>
+</pre>
+</body>
+</html>
+
+

@@ -1,0 +1,8 @@
+<?php
+$x=array();
+$x[0]="manogna";
+$x[1]="alekhya";
+$x[2]="ram";
+$x[3]="ram";
+$y=array_unique($x);
+print_r($y);

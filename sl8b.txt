@@ -1,0 +1,16 @@
+<html> 
+<?php  
+$con=mysqli_connect("localhost","root","","test"); 
+if($con)
+print "connection established"."<br>"; 
+else  
+print "connection failed" .mysqli_error(); 
+mysqli_select_db($con,"test");
+mysqli_query($con,"delete from student where sname='kittu'"); 
+$query=mysqli_query($con,"select *from student");
+$rows=mysqli_num_rows($query);  
+echo "no.of rows in table are";
+print $rows;
+mysqli_close($con); 
+?> 
+</html>

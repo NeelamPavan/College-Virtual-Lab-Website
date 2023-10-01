@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A.Insert 5 records into dept table.Insert few rows and truncate those from emp1 table and also
+drop it. .
+
+ Query:
+
+SQL>Insert into dept values(&deptno,’&dname’,’&loc’);
+SQL>create table emp1 as select * from emp;
+SQL>insert into emp1 values(7000, ’King’, ‘Pres’, 10, 20,10000,500, ’12-Jan-92’);
+SQL>insert into emp1 values(7010, ‘Jack’, ‘VP’, 10, 30, 9000, 300, ’19-Jul-92’);
+SQL>Truncate table emp1;
+SQL>Drop table emp1;
+
+
+
+b. Insert 11 records into the emp table.
+
+Query:
+
+SQL>insert into empvalues(&no, ’&name’, ’&job’, &mgr, &deptno, &sal, &comm, ‘&dob’);
+Note: Repeat execution of this statement for 11 times for 11 record insertions
+
+
+
+
+c. Update the emp table to set the default commission of all employees to Rs.1000 /- who are
+working as managers.
+
+Query:
+
+SQL>update emp set commission=1000 where job like ‘%Manager%’;
+
+
+
+
+d. Delete only those who are working as Supervisors.
+
+Query:
+
+SQL>delete from employee where job like ‘%Supervisor’;
+
+
+
+
+e. Delete the rows whose empno is 7599.
+
+Query:
+
+SQL>delete from employee where empno=7599;
+</h4>
+</pre>
+</body>
+</html>
+
+

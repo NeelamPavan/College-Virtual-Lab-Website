@@ -1,0 +1,58 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+class ThisExample
+{
+int variable = 5;
+public static void main(String args[])
+{
+ThisExample obj = new ThisExample();
+obj.method(20);
+obj.method();
+}
+void method(int variable)
+{
+variable = 10;
+System.out.println("Value of Instance variable :" +this.variable);
+System.out.println("Value of Local variable :" + variable);
+}
+void method()
+{
+int variable = 40;
+System.out.println("Value of Instance variable :" + this.variable);
+System.out.println("Value of Local variable :" + variable);
+}}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javacThisExample.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java ThisExample
+
+Value of Instance variable : 5
+Value of Local variable : 10
+Value of Instance variable: 5
+Value of Local variable : 40
+</h4>
+</pre>
+</body>
+
+</html>

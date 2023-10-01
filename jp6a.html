@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+public class CheckedExceptionExample
+{
+private static String filepath = "E:/Demo/ArrayBR.java";
+public static void main(String[] args)
+{
+BufferedReader br = null;
+String line;
+try
+{
+br = new BufferedReader(new FileReader(filepath));
+while ((line = br.readLine()) != null)
+{
+System.out.println(line);
+}
+} catch (IOException e)
+{
+System.err.println("An IOException was caught:"+e.getMessage());
+}
+/** finally
+{
+try
+{
+if(br != null)
+br.close();
+ } catch (IOException e)
+{
+e.printStackTrace();
+ }
+} */
+} }
+ </div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+/* if the specified file in the file path string variable doesn’t exist,
+ it throws an IOException
+stating that “the system cannot find the specified file” otherwise
+ this program prints thecontents
+of the file*/
+</h4>
+</pre>
+</body>
+
+</html>

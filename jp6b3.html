@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+class DivideByZero
+{
+public static void main(String args[])
+{
+int x = 0; int y =10;
+try
+{
+ int z = y/x;
+}
+catch(ArithmeticException ae)
+{
+ System.out.println("Divisor cannot be zero");
+}
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac DivideByZero.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java DivideByZero
+
+Divisor cannot be zero
+</h4>
+</pre>
+</body>
+
+</html>

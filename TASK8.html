@@ -1,0 +1,72 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. Display all the employees and departments implementing left outer join.
+
+Query:
+
+SQL>select e.empno, e.ename, d.deptno, d.dname from emp e left outer join dept d
+on(e.deptno=d.deptno);
+
+
+
+
+b. Display the employee name and department name in which they are working implementing a
+full outer join.
+
+Query:
+
+SQL> select e.ename,d.dname from emp e full outer join dept d on(e.deptno=d.deptno);
+
+
+
+
+c. Write a Query to display the employee name and manager’s name and salary for all
+employees.
+
+Query:
+
+SQL> select e.ename, m.ename “MGR”, m.sal “MGRSAL” from emp e, emp m where
+e.mgr=m.empno;
+
+
+
+
+d. Write a Query to Output the name, job, employee number, department name, location for each
+department even if there are no employees.
+
+Query:
+
+SQL> select e.eno, e.ename, e.job,d.depno, d.dname, d.loc from emp e left outer join dept d
+on(e.depno=d.depno);
+
+
+
+
+e. Display the details of those who draw the same salary.
+
+Query:
+
+SQL> select e.eno, e.ename, e.job, e.sal,d.sal from emp e,emp d where e.sal=d.sal and
+e.eno<>d.eno;
+</h4>
+</pre>
+</body>
+</html>
+

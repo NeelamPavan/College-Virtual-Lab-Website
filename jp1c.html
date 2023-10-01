@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class Task1c
+{
+public void disp(char c)
+{
+System.out.println("Value of charcter c="+c);
+}
+public void disp(char c, int num)
+{
+System.out.println("Value of character c="+c);
+System.out.println("Value of integer num="+num);
+}
+public void disp(int no, double d)
+{
+System.out.println("Value of Integer number No="+no);
+System.out.println("Value of Floating Number ="+no);
+}
+}
+class MethodOverloading
+{
+public static void main(String args[])
+{
+Task1c obj = new Task1c();
+obj.disp('a');
+obj.disp('a',10);
+obj.disp(10,20.40);
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javacMethodOverloading.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java MethodOverloading
+
+Value of character c=a
+Value of character c=a
+Value of integer num=10
+Value of Integer number No=10
+Value of Floating no value=20.4
+</h4>
+</pre>
+</body>
+</html>

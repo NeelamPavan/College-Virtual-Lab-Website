@@ -1,0 +1,86 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. Count the total records in the emp table.
+
+Query:
+
+select count(*) from emp;
+
+
+
+
+B. Calculate the total and average salary of the employees.
+
+Query:
+
+select sum(sal) “Total”, avg(sal) “Average” from emp;
+
+
+
+
+C. Determine the maximum and minimum salary of the employees and rename the columns
+max_salalary and min_salary.
+
+Query:
+
+select max(sal) “max_salary”, min(sal) “min_salary” from emp;
+
+
+
+
+D. Find the no.of departments in employee table.
+
+Query:
+
+select deptno, count(deptno) from emp group by deptno;
+
+
+
+
+E. Display job wise sum, avg, max, min salaries.
+
+Query:
+
+select job, sum(sal), avg(sal), max(sal), min(sal) from emp group by job;
+
+
+
+
+F. Display maximum salaries of all departments having maximum salary>2000.
+
+Query:
+
+select deptno, max(sal) from emp group by deptno having max(sal)>2000;
+
+
+
+
+G. Display job wise sum, avg, max and min salaries in department 10 having average
+salary>1000 and result is orederd by sum of salary in desc order.
+
+Query:
+
+select job, sum(sal), avg(sal), max(sal), min(sal) from emp where deptno=10 group by
+job having avg(sal)>1000 order by sum(sal) desc;
+</h4>
+</pre>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<html> 
+<head> 
+<title>fact</title> 
+</head> 
+<body>
+<form name="my form" action="5a.php" method="POST"> 
+enter the number:<br> 
+<input type="text" name="t1"><br> 
+<input type="submit" value="enter" name="s1"> 
+</form> 
+</body> 
+</html> 
+<?php 
+if(isset($_POST['s1'])) 
+{ 
+$i=$_POST['t1'];
+$fact=1; 
+while($i)
+{ 
+$fact=$fact*$i; 
+$i--;
+} 
+print("result is:".$fact); 
+} 
+?> 

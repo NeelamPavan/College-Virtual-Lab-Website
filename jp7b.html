@@ -1,0 +1,99 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class Q
+int n;
+boolean valueSet=false;
+synchronized int get()
+if(!valueSet)
+try
+{
+wait();
+}
+catch(InterruptedException e)
+{
+System.out.println("Interrupted Exception caught");
+}
+System.out.println("Got:"+n);
+valueSet=false;
+notify();
+return n;
+}
+synchronized void put(int n)
+{
+if(valueSet)
+try
+{
+wait();
+}
+catch(InterruptedException e)
+{
+System.out.println("Interrupted Exception caught");
+}
+this.n=n; valueSet=true;
+System.out.println("Put:"+n);notify();
+}
+}
+class Producer implements Runnable
+{
+ 34
+Q q;
+Producer(Q q) {
+this.q=q;
+new Thread(this,"Producer").start(); }
+public void run() {
+int i=0;
+while(true) {
+q.put(i++); }}}
+class Consumer implements Runnable {Q q;
+Consumer(Q q) {
+this.q=q;
+new Thread(this,"Consumer").start(); }
+public void run() {
+while(true) {
+q.get(); }}}
+class task7b {
+public static void main(String[] args) {Q q=new Q(); new Producer(q); new Consumer(q);
+System.out.println("Press Control
+-
+c to stop");
+}}
+ </div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+
+D:\education\java\programs>javac task7b.java
+
+D:\education\java\programs>java task7b
+
+Put:1
+Got:1
+Put:2
+Got:2
+Put:3
+Got:3
+Put:4
+Got:4
+Put:5
+Got:5
+</h4>
+</pre>
+</body>
+</html>

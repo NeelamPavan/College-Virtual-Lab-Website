@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Create a table</title> 
+<script>
+function createTable()
+{
+var rows = prompt("Input number of rows");
+var cols = prompt("Input number of columns");
+if( rows==""||rows==null)
+ rows=10;
+if(cols==""||cols==null)
+  cols=10;
+var j=1;
+var out="<table border='1' width='50'>";
+for(i=1;i<=rows;i++)
+{
+out=out+"<tr>";
+while(j<=cols)
+{
+out=out+"<td>"+i*j+"<td>";
+j=j+1;
+} 
+out=out+"</tr>";
+j=1;
+}
+out=out+"</table>";
+document.write(out);
+}
+</script>
+</head>
+<body> 
+<center>
+<table id="myTable" > 
+</table><form> 
+<input type="button" onclick="createTable()" value="Create table"> 
+</form>
+</center></body></html>
+

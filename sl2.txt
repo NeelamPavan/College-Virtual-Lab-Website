@@ -1,0 +1,130 @@
+<html>
+<head>
+<title> Validate the Password </title>
+<script>
+function validateForm() 
+{
+    //collect form data
+    
+    var name1 = document.getElementById("fname").value;
+    var name2 = document.getElementById("lname").value;
+    var emailId = document.getElementById("emailId").value;
+    var pw1 = document.getElementById("pswd1").value;
+    var pw2 = document.getElementById("pswd2").value;
+    var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
+    //check empty first name field
+    if(name1 == "") 
+   {
+     console.log("1");
+      document.getElementById("Fmsg").innerHTML = "**Fill the first name";
+      return false;
+    }
+    
+   if(name2 == "") 
+   {
+     console.log("2");
+     document.getElementById("Fmsg").innerHTML = "";
+     document.getElementById("Lmsg").innerHTML = "Fill the Last name";
+      return false;
+    }
+     if(emailId == "") 
+    {
+      console.log("3");
+      document.getElementById("Lmsg").innerHTML = " ";  
+      document.getElementById("Emsg").innerHTML = "**Enter Email id";
+      return false;
+    }
+   if(!regex.test(emailId))
+
+   {
+      console.log("4");
+      document.getElementById("Emsg").innerHTML = "Incorrect Email Id ";
+      return false;
+    }
+
+    //check empty password field
+    if(pw1 == "") {
+
+      console.log("5");
+      document.getElementById("Emsg").innerHTML = "";
+      document.getElementById("Pmsg").innerHTML = "**Fill the password please!";
+      return false;
+
+    }
+  
+    //check empty confirm password field
+    if(pw2 == "") 
+   {
+    console.log("6");
+    document.getElementById("Pmsg").innerHTML = "";    
+    document.getElementById("CPmsg").innerHTML = "**Enter the password please!";
+      return false;
+    } 
+        
+    if(pw1 != pw2) 
+   {
+    console.log("7");
+      document.getElementById("CPmsg").innerHTML = "**Passwords are not same";
+      return false;
+    } 
+   else 
+    {
+      console.log("11");
+      alert (" Data entered successfully");
+      document.write("JavaScript form has been submitted successfully");
+      return true;
+     }
+ }
+</script>
+</head>
+<body>
+<center>
+
+
+
+
+<h1> Form Validation </h1>
+
+<form onsubmit ="return validateForm()" >
+        <table>
+                <tr>
+	   <td><label> First Name*</labe></td>
+	   <td><input type = "text" id = "fname" value = ""></td>
+	   <td><p id = "Fmsg" style="color:red"> </p></td> 
+                </tr>
+
+                 <tr>
+
+                  <td><label>Last Name</label></td>
+                   <td><input type = "text" id = "lname" value = ""> </td>
+                  <td> <p id = "Lmsg" style="color:red"> </p></td>
+                  </tr>
+
+                   <tr>
+                    <td><label>Email Address:</label></td>
+                      <td> <input type="text" id="emailId" ></td>
+                       <td><p id = "Emsg" style="color:red"> </p> </td>
+                    </tr>
+
+
+                      <tr>
+                      <td><label>Create Password*</label></td>
+                       <td><input type = "password" id = "pswd1" value = ""></td>
+                        <td><p id = "Pmsg" style="color:red"> </p></td>
+                      </tr>
+
+                  <tr>
+                 <td><label> Confirm Password*</label></td>
+                 <td><input type = "password" id = "pswd2" value = ""></td>
+                  <td><p id = "CPmsg" style="color:red"> </p> </td>
+                  </tr>
+
+                  <tr>
+                      <td><input type = "submit" value = "Submit"></td>
+                   </tr>
+
+</form>
+</center>
+</body>
+</html>

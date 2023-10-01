@@ -1,0 +1,41 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;javascript change image onclick event
+&lt;/title&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+h2 {
+text-align: center;
+font-size: 30px;
+}
+img#getImage {
+width: 300px;
+height: auto; 
+border: 4px solid #a1a1a1; 
+}
+div {
+text-align: center;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;h2&gt;Change image onClick event here...&lt;/h2&gt;
+&lt;imgsrc=&quot;nature1.jpg&quot; id=&quot;getImage&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;input type=&quot;button&quot; onclick=&quot;imagefun()&quot; value=&quot;Change Image&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+functionimagefun() {
+varImage_Id = document.getElementById(&apos;getImage&apos;);
+if (Image_Id.src.match(&quot;imageName1.jpg&quot;)) {
+Image_Id.src = &quot;nature1.jpg&quot;;
+ }
+else {
+Image_Id.src = &quot;nature.jpg&quot;;
+ }
+ } 
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

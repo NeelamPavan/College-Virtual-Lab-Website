@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+class FT implements Runnable
+{
+public void run()
+{
+while(true)
+{
+try
+{
+System.out.println("Good Morning");
+Thread.sleep(1000);
+}
+catch(InterruptedException e)
+{
+System.out.println("First Thread is interrupted when sleeping");
+}
+}
+}
+}
+class ST implements Runnable
+{
+public void run()
+{
+while(true)
+{
+try
+{
+System.out.println("Hello");
+Thread.sleep(2000);
+}
+ 32
+catch(InterruptedException e)
+{
+System.out.println("Second Thread is interrupted when sleeping");
+}}
+}}
+class TT implements Runnable
+{
+public void run()
+{
+while(true)
+{
+try
+{
+System.out.println("Welcome");
+Thread.sleep(3000);
+}
+catch(InterruptedException e)
+{
+System.out.println("Third Thread is interrupted when sleeping");
+}
+}
+}
+}
+public class task7a
+{
+public static void main(String[] args)
+{
+FT ft=new FT();
+ST st = new ST();
+TT tt=new TT();
+Thread thread1=new Thread(ft);
+thread1.start();
+Thread thread2=new Thread(st);
+thread2.start();
+Thread thread3=new Thread(tt);
+thread3.start();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+D:\education\java\programs>javac task7a.java
+
+D:\education\java\programs>java task7b GoodMorning
+
+Hello
+Welcome
+GoodMorning
+Hello
+GoodMorning
+Welcome
+</h4>
+</pre>
+</body>
+
+</html>

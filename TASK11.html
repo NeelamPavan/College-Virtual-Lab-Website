@@ -1,0 +1,114 @@
+
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+
+A. Write a PL/SQL code to retrieve the employee name, join date and designation from employee
+database of an employee whose number is input by the user.
+
+/*Employee details*/
+DECLARE
+v_name varchar2(25);
+v_joindate date;
+v_dsgn employees.job_id%type;
+BEGIN
+select last_name,hire_date,job_id into v_name,v_joindate,v_dsgn from employees where
+employee_id=&id;
+DBMS_OUTPUT.PUT_LINE('Name:'||v_name||' Join Date:'||v_joindate||' Designation:'||v_dsgn);
+END;
+/
+
+
+
+
+B. Write a PL/SQL code to calculate tax for an employee of an organization.
+
+/*Calculate Tax*/
+DECLARE
+v_sal number(8);
+v_tax number(8,3);
+v_name varchar2(25);
+BEGIN
+select salary,last_name into v_sal,v_name from employees where employee_id=&id;
+if v_sal<10000 then
+v_tax:=v_sal*0.1;
+elsif v_sal between 10000 and 20000 then
+v_tax:=v_sal*0.2;
+else
+v_tax:=v_sal*0.3;
+END IF;
+DBMS_OUTPUT.PUT_LINE('Name:'||v_name||' Salary:'||v_sal||'Tax:'||v_tax);
+END;
+/
+
+
+
+
+C. Write a PL/SQL program to display top 10 employee details based on salary using cursors.
+
+/*Top 10 salary earning employee details*/
+DECLARE
+cursor c_emp_cursor is select employee_id, last_name, salary from employees order by salary
+desc;
+v_rec c_emp_cursor%rowtype;
+v_i number(3):=0;
+BEGIN
+open c_emp_cursor;
+loop
+v_i:=v_i+1;
+fetch c_emp_cursor into v_rec;
+exit when v_i>10;
+DBMS_OUTPUT.PUT_LINE(v_rec.employee_id||' '||v_rec.last_name||' '||v_rec.salary);
+END LOOP;
+close c_emp_cursor;
+END;
+/
+
+
+
+
+d. Write a PL/SQL program to update the commission values for all employees with salary less
+than 5000 by adding 1000 to existing employees.
+
+/*Updation*/
+declare
+cursor c_emp is select salary,commission_pct from employees;
+v_emp c_emp%rowtype;
+v_temp number(7,2);
+v_temp1 number;
+BEGIN
+open c_emp;
+loop
+fetch c_emp into v_emp;
+exit when c_emp%notfound;
+ v_temp1:=v_emp.commission_pct;
+ v_temp:=(v_emp.salary*v_emp.commission_pct)+1000;
+ v_temp:=v_temp/v_emp.salary;
+ if(v_emp.salary<5000) then
+ update employees set commission_pct=v_temp where employee_id=v_temp.employee_id;
+ end if;
+ DBMS_OUTPUT.PUT_LINE('Commission % updated from '||v_temp1||' to '||v_temp);
+end loop;
+END;
+/
+</h4>
+</pre>
+</body>
+</html>

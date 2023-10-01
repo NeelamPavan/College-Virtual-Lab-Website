@@ -1,0 +1,154 @@
+
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+1. SQL>Create user test identified by pswd;
+
+
+
+
+2. SQL> Grant create session, create table, create sequence, create view to test;
+
+
+
+
+3. SQL>Create role manager;
+
+SQL>Grant create table, create view to manager;
+SQL>Grant manager to test;
+
+
+
+
+4. SQL>Alter user test identified by qwerty;
+
+
+
+
+5. SQL>Grant select on employees to test;
+
+
+
+
+6. SQL>Grant update (department_name,location_id) on departments to test;
+
+
+
+
+7. SQL>Grant select,insert on hr.locations to test;
+
+
+
+
+8. SQL>Revoke select,insert on departments from test;
+
+
+
+
+INDEXES
+
+SQL>create index emp_index on emp (upper(ename));
+
+
+
+
+SQL>select employee_id,last_name,job_id from employees where last_name between 'N' and
+'P';
+
+
+
+
+2. Creating Index while creating Table.
+
+SQL>create table emp2 (empnonumber(6) PRIMARY KEY USING INDEX (CREATE INDEX
+emp_idx ON emp2(empno)) ,ename varchar2(20),job varchar2(20));
+
+
+
+
+User-defined indexes:
+
+SQL>select index_name,table_name from user_indexes where table_name='EMP2';
+
+
+
+
+3. create table emp3(empnonumber(6) primary key, ename varchar2(20), job varchar2(10));
+
+
+
+
+Default indexes.
+
+SQL>select index_name,table_name from user_indexes where table_name='EMP3';
+
+
+
+
+4. Displaying all the indexes.
+
+SQL>Select index_name, table_name from user_indexes;
+
+
+
+
+5. SQL>select table_name, index_name, column_name from user_ind_columns where
+table_name='EMPLOYEES';
+
+
+
+
+6. Dropping an index:
+
+SQL> drop index emp_index;
+
+
+
+
+SEQUENCE
+
+1. SQL>create sequence my_seq start with 10 increment by 10 maxvalue 100 nocache;
+
+
+
+
+2. SQL>select my_seq.nextval from dual;
+
+
+
+
+3. SQL>select my_seq.currval from dual;
+
+
+
+
+4. SQL>create table dept(deptno number(6),dname varchar2(20),loc varchar2(10));
+SQL>insert into dept values(my_seq.nextval,'Executive','US');
+SQL>insert into dept values(my_seq.nextval,'Marketing','UK');
+
+
+5. SQL>drop sequence my_seq;
+
+</h4>
+</pre>
+</body>
+</html>
+
+
+

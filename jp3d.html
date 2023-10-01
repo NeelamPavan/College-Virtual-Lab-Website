@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class FinalKeyword
+{
+final int MAX_VALUE=99;
+void myMethod()
+{
+System.out.println("MAX_VALUE ="+MAX_VALUE);
+//MAX_VALUE=101;
+}
+public static void main(String args[])
+{
+FinalKeyword obj=new FinalKeyword();
+obj.myMethod();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac FinalKeyword.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java FinalKeyword
+
+MAX_VALUE=99
+</h4>
+</pre>
+</body>
+
+</html>

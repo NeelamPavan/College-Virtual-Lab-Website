@@ -1,0 +1,87 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+class Bank
+{
+int getROI()
+{
+return 0;
+}
+}
+class SBI extends Bank
+{
+int getROI()
+{
+return 8;
+}
+}
+class ICICI extends Bank
+{
+int getROI()
+{
+return 7;
+}
+}
+class Axis extends Bank
+{
+int getROI()
+{
+return 9;
+}
+}
+class NewMethodOverriding
+{
+public static void main(String[] args)
+{
+SBI s=new
+SBI();
+ICICI i=new ICICI();
+Axis a=new Axis ();
+System.out.println("SBI rate of interest=" + s.getROI());
+System.out.println("ICICI rate of interest=" + i.getROI());
+ 15
+System.out.println("Axis rate of interest=" + a.getROI());
+Bank b=new ICICI ();
+System.out.println("Example of Base class can hold the object of any child class:"+b.getROI());
+/*Reference of Base class can hold the object of any child class.But vice-versa as shown below is
+not possible.**/
+/*ICICI i1=new Bank ();
+System.out.println("ROI:"+i1.getROI());*/
+//Here i1 is reference of ICICI bank but it is trying to hold object of base classwhich
+//is not allowed.
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac NewMethodOverriding.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java NewMethodOverriding
+
+SBI rate of interest=8
+ICICI rateof interest=7
+Axis rate of interest=9
+Example of Base class reference can hold the object of any child class = 7
+</h4>
+</pre>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+A. Write a trigger on the employee table which shows the old values and new values of ename
+after any updations on ename on Employee table.
+
+create or replace trigger t_emp_name after update of last_name on salary_table FOR EACH
+ROW
+begin
+DBMS_OUTPUT.PUT_LINE('Name updated from '||:OLD.last_name||' to '||:NEW.last_name);
+END;
+/
+
+
+
+
+B. Write a PL/SQL procedure for inserting, deleting and updating in employee table.
+
+create or replace procedure proc_dml (p_id emp.employee_id%type, p_sal number,p_case
+number) is
+BEGIN
+case p_case
+when 1 then
+ DBMS_OUTPUT.PUT_LINE('Insertion...');
+insert into emp(employee_id,last_name,email,hire_date,job_id)
+values(p_id,'Franco',’FJames’,'12-JAN-02','ST_CLERK');
+when 2 then
+DBMS_OUTPUT.PUT_LINE('Deletion...');
+delete from emp where employee_id=p_id;
+when 3 then
+DBMS_OUTPUT.PUT_LINE('Updation...');
+update emp set salary=p_sal where employee_id=p_id;
+end case;
+DBMS_OUTPUT.PUT_LINE('DML operation performed on '||SQL%rowcount||' rows');
+END;
+/
+DECLARE
+v_id employees.employee_id%type:=&id;
+v_sal employees.salary%type:=&sal;
+v_case number:=&case1or2or3;
+begin
+proc_dml(v_id,v_sal,v_case);
+END;
+/
+
+
+
+
+C. Write a PL/SQL function that accepts department number and returns the total salary of the
+department.
+
+create function func_dept (p_dept number) return number is
+v_total number;
+BEGIN
+select sum(salary) into v_total from employees where department_id=p_dept;
+return v_total;
+END;
+/
+DECLARE
+v_dept number:=&department_id;
+v_total number;
+BEGIN
+v_total:=func_dept(v_dept);
+DBMS_OUTPUT.PUT_LINE('Total salary in Department '||v_dept||' is '||v_total);
+END;
+/
+</h4>
+</pre>
+</body>
+</html>
+

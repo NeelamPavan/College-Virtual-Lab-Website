@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class DefaultConstructor
+{
+int Sid;
+String Sname;
+//Default Constructor
+methodDefaultConstructor()
+{
+System.out.println("Default Constructor method gets calledautomatically
+whenever object of the class gets created.");
+Sid=846;
+Sname="Sowmya";
+}
+void showDetails()
+{
+System.out.println("Sid:"+Sid+"Sname:"+Sname);
+}
+public static void main(String[] args)
+{
+//creating object
+DefaultConstructor object = new DefaultConstructor();object.showDetails();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac DefaultConstructor.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java DefaultConstructor
+
+Sid:846
+Sname:Sowmya
+</h4>
+</pre>
+</body>
+</html>

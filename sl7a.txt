@@ -1,0 +1,14 @@
+<html>
+<body>
+<?php
+$con=mysqli_connect("localhost","1234","","1576");
+if($con)
+print "connection established"."<br>";
+else
+print "connection failed".mysqli_error();
+mysqli_select_db($con,"1576");
+mysqli_query($con,"create table user(snoint primary key,unamevarchar(25),password varchar(15),age
+int,phoneint)");
+?>
+</body>
+</html>

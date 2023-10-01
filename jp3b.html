@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class Parentclass
+{
+int num=100;
+}
+//Child class or subclass
+class SuperKeyword extends Parentclass
+{
+int num=110;
+void printNumber()
+{
+//Super.variable_name
+System.out.println("Accessing Parentclass variable using super keyword="+super.num);
+System.out.println("Without using super keyword the value of num ="+num);
+}
+public static void main(String args[])
+{
+SuperKeyword obj= new SuperKeyword();
+obj.printNumber();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac SuperKeyword.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java SuperKeyword
+
+Accessing Parentclass variable using super keyword = 100
+without using super keyword the value of num is = 110
+</h4>
+</pre>
+</body>
+
+</html>
+

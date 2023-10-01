@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+import java.io. *;
+class task5c
+{
+public static void main (String [] args) throws IOException
+{
+BufferedReader br=new BufferedReader(newInputStreamReader(System.in));
+System.out.println("Enter a file name");
+String s=br.readLine();
+int s1,ch=0,ln=0,wd=0;
+FileInputStream fin=new FileInputStream(s);do
+{
+s1= fin.read();if(s1 !=-1)
+ch++;
+if((char)s1==' '||(char)s1=='\n')
+wd++;
+if((char)s1=='\n')
+ln++;
+} while(s1!= -1);
+System.out.println("The number of characters is"+ch);
+System.out.println("The number of words is"+wd);
+System.out.println("The number of lines is"+ln);
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+
+D:\education\java\programs>javactask5c.java
+
+D:\education\java\programs>java task5c
+
+Enter a file nameA.java
+The number of characters are 6800
+The number of wordsare 580
+The number of lines are264
+</h4>
+</pre>
+</body>
+
+</html>
+

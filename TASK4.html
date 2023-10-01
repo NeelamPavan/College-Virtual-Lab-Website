@@ -1,0 +1,110 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. List the records in the emp table order by salary in descending order.
+
+Query:
+
+SQL>select * from emp order by saldesc;
+
+
+
+
+B. Display only those employees whose deptno is 30.
+
+Query:
+
+SQL>select * from emp where deptno=30;
+
+
+
+
+C. Display deptno from the table employee avoiding the duplicate values.
+
+Query:
+
+SQL>select distinct deptno from emp;
+
+
+
+
+D. List all employee names, salary and 15% rise in salary.Label the column as New Sal.
+
+Query:
+
+SQL>select ename, sal, (sal*1.15) “New Sal” from emp;
+
+
+
+
+E. Display the rows whose empno ranges from 7500 to 7600.
+
+Query:
+
+SQL>select empno, ename, sal from emp where empno between 7500 and 7600;
+
+
+
+
+F. Display all the employees in dept 10 and 20 in alphabetical order of names.
+
+Query:
+
+SQL>select empno, ename, deptno from emp where deptnoin(10,20) group by ename;
+
+
+
+
+G. List the employe names who do not earn commission.
+
+Query:
+
+SQL>select empno, ename, sal from emp where commission is null;
+
+
+
+
+H. Display all the details of the records with 5 character names with ‘S’ as starting character.
+
+Query:
+
+SQL>select * from employees where lengty(last_name)=5 and last_name like ‘s%’;
+
+
+
+
+I.Display joining date of all employees in the year of 1998.
+
+Query:
+
+SQL>select employee_id ,hire_date from employees where hire_date between ‘1-jan-1998’ and
+’31-dec-1998.
+
+
+
+
+J. List out the employee names whose salary is greater than 5000and greater than6000.
+
+Query:
+
+SQL>select ename from emp where sal>5000 and sal>6000;
+</h4>
+</pre>
+</body>
+</html>

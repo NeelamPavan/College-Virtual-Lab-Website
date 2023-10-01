@@ -1,0 +1,96 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+
+A. Display the employee name concatenated with empno.
+
+Query:
+
+SQL>select concat(empno, concat(' ', ename)) from emp;
+
+
+
+
+B. Display half of employee name in upper case and half in lower case.
+
+Query:
+
+SQL>Selectupper(substr(ename,0,length(ename)/2))||lower(substr(ename,(length(ename)/2)+1,le
+ngth(ename))) “Name” from emp;
+
+
+
+
+C. Display the month name of date “14-jul-09” in full.
+
+Query:
+
+SQL>select to_char(to_date('14-jul-09'),'MONTH') “Month” from dual;
+
+
+
+
+D. Display the DOB of all employees in the format 'dd-mm-yy'.
+
+Query:
+
+SQL> select to_char(dob,'dd-mm-yy') from emp;
+
+
+
+
+E. Display the date two months after the DOB of employees.
+
+Query:
+
+SQL> select add_months(dob,2) from emp;
+
+
+
+
+F. Display the last date of that month in “05-Oct-09”.
+
+Query:
+
+SQL>select last_day(to_date('05-oct-09')) “Last” from dual;
+
+
+
+
+G. Display the rounded date in the year format, month format, day format in the employee.
+
+Query:
+
+SQL> select round(dob, 'dd'), round(dob, 'month'), round(dob, 'year') from emp;
+
+
+
+
+H.Display the commissions earned by employees. If they do not earn commission, display it as
+“No Commission”.
+
+Query:
+
+SQL>selectemployee_id,last_name,nvl(to_char(commission_pct),’NoCommission’)”commissio
+n” from employees;
+</h4>
+</pre>
+</body>
+</html>

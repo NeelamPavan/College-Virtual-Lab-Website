@@ -1,0 +1,98 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. Find the third highest salary of the employees.
+
+Query:
+
+SQL>select max(sal) from emp where sal<(select max(sal) from emp where sal<(select
+max(sal) from emp));
+
+
+
+
+B. Display all the employee names and salary whose salary is greater than the minimum salary
+and job title starts with 'M'.
+
+Query:
+
+SQL>select ename, sal from emp where sal>(select min(sal) from emp) and job like 'M%';
+
+
+
+
+c. Write a Query to display information about employees who earn more than any employee in
+department 30.
+
+Query:
+
+SQL>select empno, ename, sal, deptno from emp where sal>any (select sal from emp where
+deptno=30);
+
+
+
+
+d. Display the employees who have the same job as Jones and whose salary>=Fords.
+
+Query:
+
+SQL>select empno, ename, sal, job from emp where job= (select job from emp where
+ename='Jones') and sal>= (select sal from emp where ename='Fords');
+
+
+
+
+e. List out the employee names who get the salary> maximum salary of dept with deptno 20,30.
+
+Query:
+
+SQL>select ename from emp where sal>(select max(sal) from emp where deptno in(20,30));
+
+
+
+
+f. Display the maximum salaries of the departments whose maximum salary>9000.
+
+Query:
+
+SQL>select max(sal) from emp group by deptno having max(sal)>9000;
+
+
+
+
+g. Create a table employee with the same structure as the table emp and insert rows into the table
+using select clauses.
+
+Query:
+
+SQL>create table employee as (select * from emp);
+
+
+
+
+h. Create a manager table from the emp table which should hold details only about managers.
+
+Query:
+
+SQL>create table manager as (select * from emp where job like ‘%Manager%’);
+</h4>
+</pre>
+</body>
+</html>
+

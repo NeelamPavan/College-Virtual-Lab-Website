@@ -1,0 +1,64 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+import java.util.StringTokenizer;
+import java.util.Scanner;
+class tokens
+{
+public static void main(String[] args)
+{
+String temp; int k,total=0;
+Scanner input=new Scanner(System.in);//Take the input from the user.
+System.out.println("Enter the Numbers : "); //Display the message to user.
+String sentence=input.nextLine(); //read the numbers entered by the user.
+//System.out.println("Number="+sentence);
+StringTokenizer s1=new StringTokenizer(sentence); //Create object of theString
+//Tokenizer and pass the numbers entered by the user to it.
+System.out.println("Total Number of tokens:"+s1.countTokens());
+while(s1.hasMoreTokens())
+{
+temp=s1.nextToken();
+//nextToken() takes the next token and returns string
+k=Integer.parseInt(temp);//Make use of parseInt() method from the Integer class
+//to convert the String token into integer token.
+total=total+k;//total+=k;
+//Perform the addtion for obtaining final sum of all theSystem.out.print(k+"\t")
+}
+System.out.println("Sum of tokens :"+total); //Display the sum of all the tokensentered by
+//the user.
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac tokens.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java tokens
+
+Enter the Numbers :
+1 2 3 4 5
+Total Number of tokens : 5
+12345
+Sum of tokens : 15
+</h4>
+</pre>
+</body>
+
+</html>

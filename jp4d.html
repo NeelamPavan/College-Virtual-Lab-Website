@@ -1,0 +1,59 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class A
+{
+Private int a=5;
+publicint b=6;
+protected int c=1;int d=2;
+void print()
+{
+a=20;
+System.out.println(a+" "+b+" "+c+" "+d);
+}
+}
+class B
+{
+A x=new A();void print1()
+{
+x.b=7;//accessing public variable of class A
+//x.a=30;error can't access private variableoutside the class
+x.d=35;//accessing default access variableoutside the class
+x.print();
+}
+}
+class C
+{
+public static void main(String []args)
+{
+B y=new B();y.print1();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac C.java
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java C
+20 7 1 3
+</h4>
+</pre>
+</body>
+
+</html>

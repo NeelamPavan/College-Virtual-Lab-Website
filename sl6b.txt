@@ -1,0 +1,23 @@
+6b.php
+
+<?php  
+setcookie("user", "Sonoo", time()+120);  
+?>  
+<html>  
+<body>  
+<?php  
+if(!isset($_COOKIE["user"])) {  
+    echo "Sorry, cookie is not found!";  
+} else {  
+    echo "<br/>Cookie Value: " . $_COOKIE["user"];  
+}  
+?>  
+</body>  
+</html>  
+
+6b1.php
+
+<?php  
+setcookie("user", "Sonoo", time()-60); 
+echo "cookie deleted" 
+?>

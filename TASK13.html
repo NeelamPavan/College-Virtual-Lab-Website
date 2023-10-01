@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+A. Write a PL/SQL program to handle predefined exceptions.
+
+declare
+v_id number(6):=&employee_id;
+v_sal employees.salary%type;
+v_name employees.last_name%type;
+v_job employees.job_id%type;
+begin
+select last_name, salary into v_name, v_sal from employees where employee_id=v_id;
+DBMS_OUTPUT.PUT_LINE(v_name||q'['s salary is ]'||v_sal);
+select job_id into v_job from employees where last_name=v_name;
+DBMS_OUTPUT.PUT_LINE(v_name||q'['s job is ]'||v_job);
+EXCEPTION
+when no_data_found then
+DBMS_OUTPUT.PUT_LINE('No employee with ID:'||v_id);
+when too_many_rows then
+DBMS_OUTPUT.PUT_LINE('Many employees with Name:'||v_name);
+when others then
+DBMS_OUTPUT.PUT_LINE('Some other error occured');
+end;
+/
+
+
+
+
+B. Write a PL/SQL program to handle user defined exception.
+
+DECLARE
+v_dept number:=&department_id;
+e_nodept exception;
+BEGIN
+update employees set salary=salary+1050 where department_id=v_dept;
+IF SQL%notfound then
+ raise e_nodept;
+ELSE
+ DBMS_OUTPUT.PUT_LINE(SQL%rowcount||' rows updated');
+END IF;
+EXCEPTION
+when e_nodept then
+DBMS_OUTPUT.PUT_LINE('No Department with ID:'||v_dept)
+END;
+/
+
+
+
+
+C. Write a PL/SQL code to create
+
+i. Package specification.
+
+create or replace package pack_dml is
+procedure proc_dml(p_id number,choice number);
+END pack_dml;
+/
+
+ii. Package body for the insert, retrieve, update and delete operations on student table.
+
+create or replace package body pack_dml is
+procedure proc_dml(p_id number,choice number) is
+v_name varchar2(20);
+v_total number;
+BEGIN
+case choice
+when 1 then
+DBMS_OUTPUT.PUT_LINE('Insertion...');
+insert into student values(p_id,'Franco',90);
+when 2 then
+DBMS_OUTPUT.PUT_LINE('Deletion...');
+delete from student where sid=p_id;
+when 3 then
+DBMS_OUTPUT.PUT_LINE('Updation...');
+update student set total=total+1 where sid=p_id;
+when 4 then
+select sname,total into v_name,v_total from student where sid=p_id;
+DBMS_OUTPUT.PUT_LINE('Total marks of '||v_name||' is '||v_total);
+end case;
+DBMS_OUTPUT.PUT_LINE('DML operation performed on '||SQL%rowcount||' rows');
+END proc_dml;
+END pack_dml;
+/
+BEGIN
+pack_dml.proc_dml(&StudentID,&choice1or2or3or4);
+END;
+/
+</h4>
+</pre>
+</body>
+</html>

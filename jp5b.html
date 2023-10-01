@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+import java.io.*;
+class Week5b
+{
+public static void main(String[] args) throws IOException
+{
+BufferedReaderbr=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter a file name");
+String s=br.readLine();
+int s1,i=1;
+FileInputStream fin=new FileInputStream(s);
+System.out.println(i+++” “);
+do
+{
+s1= fin.read();if(s1 !=-1)
+System.out.println((char)s1);
+if((char)s1=='\n')
+System.out.println(i+++” “);
+}while(s1!= -1);
+fin.close();
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+D:\education\java\programs>javacWeek5b.java
+
+D:\education\java\programs>java Week5b
+
+Enter a file nameA.java
+1 class A
+2 {
+3 public static void main(String args[])
+4{
+5System.out.println(“hi”);
+6}
+7 }
+</h4>
+</pre>
+</body>
+</html>

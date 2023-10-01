@@ -1,0 +1,64 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 690px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+class ConstructOverloading
+{
+int i, j;
+public ConstructOverloading()
+{
+//i=100;//j=200;
+System.out.print("Inside default constructor");
+System.out.println(" Value of i "+i+"and j "+j);
+}
+public ConstructOverloading(int q)
+{
+System.out.println("Inside single parameter constructor with int value="+q);
+}
+public ConstructOverloading(String str)
+{
+System.out.println("Inside single parameter constructor with String object");
+System.out.println("String Value="+str);
+}
+public ConstructOverloading(int p, double k)
+{
+System.out.println("Inside double parameter constructor value ofp="+p+""+"and k"+k);
+}
+public static void main(String args[])
+{
+ConstructOverloading mco = new ConstructOverloading();
+ConstructOverloading spmco = new ConstructOverloading(10);
+ConstructOverloading dpmco = new ConstructOverloading(10,20.20);
+ConstructOverloading dpmco1 = new ConstructOverloading(" Task1");
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javacConstructOverloading.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javaConstruct Overloading
+
+Inside default constructor value of i and j is 0
+Inside single parameter constructor with int value=10
+Inside double parameter constructor value of p=10 and k=20.2
+Inside single parameter constructor with string object string value= Task1s</h4>
+</pre>
+</body>
+</html>

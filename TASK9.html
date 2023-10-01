@@ -1,0 +1,72 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 750px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+A.Create a view that displays the employee id, name and salary of employees who belong to
+10th department.
+
+Query:
+
+SQL>Create view emp_view as select employee_id,last_name,salary from employees where
+department_id=10;
+
+
+
+
+b.Create a view with read only option that displays the employee name and their department
+name
+
+Query:
+
+SQL> create view emp_dept as select employee_id,last_name,department_id from employees
+with read onlyh constraint emp_dept_readonly;
+
+
+
+
+c. Display all the views generated.
+
+Query:
+
+SQL> select view_name from user_views;
+
+
+
+
+d. Execute the DML commands on the view created.and drop them.
+
+Query:
+
+SQL>delete from my_view where empno=7900;
+SQL> insert into manager_view values(8000, 'Grant', 'ExeHead', null, 10, 19000, 200, '19-dec90');
+SQL> update manager_view set sal=15000 where sal<11000;
+
+
+
+
+e.Drop a view.
+
+Query:
+
+SQL> drop view my_view;
+
+</h4>
+</pre>
+</body>
+</html>

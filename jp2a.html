@@ -1,0 +1,56 @@
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+
+import java.util.*;
+class PalindromeString
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);// Create a Scanner object
+System.out.println("Enter the string");// Take the data from the user.
+String st1=s.nextLine();//Read the data entered by the user.
+StringBuffer sb=new StringBuffer(st1);// Create StringBuffer obj for st1
+sb.reverse();// Reverse the letters
+// Check & Print if palindrome
+if(st1.equals(sb.toString()))
+{
+System.out.println("String "+st1+" is Palindrome");
+}
+else
+{
+System.out.println("String "+st1+" is notPalindrome");
+}
+}
+}
+</div>
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac PalindromeString.java
+
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java PalindromeString
+
+Enter the string: pooja
+String pooja is not a palindrome
+</h4>
+</pre>
+</body>
+</html>

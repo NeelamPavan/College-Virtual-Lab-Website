@@ -1,0 +1,69 @@
+
+<html>
+<head>
+<style>
+div {
+  background-color:black;
+  width: 600px;
+  border: 1px solid;
+  padding:5px;
+  margin: 10px;
+}
+</style>
+</head>
+<body style="background-color:black;color:white;">
+
+<pre>
+
+<h4 style="font-family:Gill Sans, sans-serif;">
+SOURCE CODE:<br><hr>
+<div>
+
+class ParamConstructor
+{
+int Sid;
+String Sname;
+ParamConstructor()
+{
+Sid=125;
+Sname="Sindhu";
+}
+ParamConstructor(int x,String n)
+{
+Sid=x;
+Sname=n;
+}
+void showDetails()
+{
+System.out.println("Sid:"+Sid+"Sname:"+Sname);
+}
+public static void main(String[]args)
+{
+ParamConstructor p=new ParamConstructor();
+p.showDetails();
+ParamConstructor p1=new ParamConstructor(1458,"Pooja");
+p1.showDetails();
+ParamConstructor p2=new ParamConstructor(1459,"Anand");
+p2.showDetails();
+}
+}
+</div>
+
+OUTPUT:<br><hr>
+<div>
+<h4 style="font-family:Gill Sans, sans-serif;">
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac ParamConstruct,java
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java ParamConstruct
+Sid:125
+Sname:Sindhu
+Sid:1458
+Sname:Pooja
+Sid:1459
+Sname:Anand
+
+
+</h4>
+</div>
+</pre>
+</body>
+</html>

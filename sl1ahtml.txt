@@ -1,0 +1,13 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;When you click a button it will change the text of sample paragraph.&lt;/p&gt;
+&lt;p id=&quot;demo&quot;&gt;I am sample paragraph.&lt;/p&gt;
+&lt;button onclick=&quot;change_text()&quot;&gt;Click me&lt;/button&gt;
+&lt;script&gt;
+functionchange_text(){
+document.getElementById(&quot;demo&quot;).innerHTML = &quot;You clicked the button, I am new paragraph.&quot;;
+}
+&lt;/script&gt;
+&lt;/body&gt;
+ &lt;/html&gt;
